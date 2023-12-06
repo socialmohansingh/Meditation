@@ -1,0 +1,48 @@
+name: medication
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_core:
+    git:
+      url: https://github.com/bemohansingh/flutter_core.git
+      ref: main
+  flutter_design_extension:
+    git:
+      url: https://github.com/bemohansingh/Flutter_Design_Extension
+      ref: main
+  flutter_module_architecture:
+    git:
+      url: https://github.com/bemohansingh/Flutter-Module-Architecture
+      ref: main
+
+  flutter_netwok_module:
+    git:
+      url: https://github.com/bemohansingh/Flutter-Network-Module
+      ref: main
+  cached_network_image: ^3.2.3
+  google_fonts: ^6.1.0
+  linear_timer: ^2.0.0
+  just_audio: ^0.9.36
+  audio_video_progress_bar: ^2.0.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/languages/
+    - assets/icons/
+    - assets/images/
