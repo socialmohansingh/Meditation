@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medication/app/configure/di.dart';
 import 'package:medication/app/constant/icon_constant.dart';
 import 'package:medication/app/design/widgets/screens/app_scaffold.dart';
 
@@ -159,7 +160,16 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: 24,
                 fit: BoxFit.contain,
               ),
-              Container(),
+              Text(
+                "v${AppDependencyContainer.version}",
+                style: GoogleFonts.urbanist().copyWith(
+                  color: context.appDesignForAction.isDarkMode
+                      ? const Color(0xFFDDE1E6)
+                      : const Color(0xFF697077),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ],
         ),

@@ -236,7 +236,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "4e87cfafa715968482d43a6d904832b762a2ef5a"
+      resolved-ref: "731887ebd5d8c45284409f9ac5f3a415a0907a88"
       url: "https://github.com/bemohansingh/Flutter_Design_Extension"
     source: git
     version: "0.0.1"
@@ -258,7 +258,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: c5fa5c814845df9b955ac799a6457ea71c18c126
+      resolved-ref: "55bbf1a74ea73eddc24fb411ad25c0ef41dbffff"
       url: "https://github.com/bemohansingh/Flutter-Module-Architecture"
     source: git
     version: "0.0.1"
@@ -473,6 +473,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  package_info_plus:
+    dependency: "direct main"
+    description:
+      name: package_info_plus
+      sha256: "7e76fad405b3e4016cd39d08f455a4eb5199723cf594cd1b8916d47140d93017"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
+  package_info_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: package_info_plus_platform_interface
+      sha256: "9bc8ba46813a4cc42c66ab781470711781940780fd8beddd0c3da62506d3a6c6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   path:
     dependency: transitive
     description:
