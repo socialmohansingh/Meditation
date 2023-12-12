@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/app/constant/icon_constant.dart';
-import 'package:medication/app/extension/audio_player.dart';
-import 'package:medication/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
-import 'package:medication/modules/settings/settings/presentations/setting_screen.dart';
+import 'package:meditation/app/constant/icon_constant.dart';
+import 'package:meditation/app/extension/audio_player.dart';
+import 'package:meditation/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
+import 'package:meditation/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
+import 'package:meditation/modules/settings/settings/presentations/setting_screen.dart';
 
 class DefaultTimer {
   int id;

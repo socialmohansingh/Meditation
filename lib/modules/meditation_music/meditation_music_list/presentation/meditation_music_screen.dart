@@ -5,10 +5,10 @@ import 'package:flutter_core/flutter_core.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/app/design/widgets/screens/app_scaffold.dart';
-import 'package:medication/app/extension/audio_player.dart';
-import 'package:medication/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/play_meditation_music.dart';
+import 'package:meditation/app/design/widgets/screens/app_scaffold.dart';
+import 'package:meditation/app/extension/audio_player.dart';
+import 'package:meditation/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
+import 'package:meditation/modules/meditation_music/play_meditation_music/presentation/play_meditation_music.dart';
 
 class MeditationMusicScreen extends StatefulWidget {
   final DefaultTimer selectedTimer;

@@ -1,4 +1,4 @@
-# medication
+# meditation
 
 A new Flutter project.
 

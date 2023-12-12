@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/modules/settings/settings/presentations/setting_screen.dart';
+import 'package:meditation/modules/settings/settings/presentations/setting_screen.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget body;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/flutter_core.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
-import 'package:medication/app/constant/image_constant.dart';
-import 'package:medication/modules/meditation_music/meditation_music_list/presentation/meditation_music_screen.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/play_meditation_music.dart';
+import 'package:meditation/app/constant/image_constant.dart';
+import 'package:meditation/modules/meditation_music/meditation_music_list/presentation/meditation_music_screen.dart';
+import 'package:meditation/modules/meditation_music/play_meditation_music/presentation/play_meditation_music.dart';
 
 class OnboardingScreen extends StatelessWidget {
   final DefaultTimer selectedTimer;

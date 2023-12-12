@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/app/configure/di.dart';
-import 'package:medication/app/constant/icon_constant.dart';
-import 'package:medication/app/design/widgets/screens/app_scaffold.dart';
+import 'package:meditation/app/configure/di.dart';
+import 'package:meditation/app/constant/icon_constant.dart';
+import 'package:meditation/app/design/widgets/screens/app_scaffold.dart';
 
 class SettingScreen extends StatefulWidget {
   static List<AppPage> oldStatePages = [];

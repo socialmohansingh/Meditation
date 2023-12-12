@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
-import 'package:medication/app/design/color_set.dart';
+import 'package:meditation/app/design/color_set.dart';
 
 class AppBrand extends Brand {
   @override
