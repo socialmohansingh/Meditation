@@ -9,4 +9,8 @@ class IconFile {
   static const upArrow = "assets/icons/upArrow.png";
   static const versionStack = "assets/icons/versionStack.png";
   static const versionStackDark = "assets/icons/versionStackDark.png";
+
+  static const checkedCheckbox = "assets/icons/checkbox_checked.png";
+  static const emptyCheckbox = "assets/icons/checkbox_empty.png";
+  static const langTranslate = "assets/icons/langTranslate.png";
 }

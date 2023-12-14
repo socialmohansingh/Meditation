@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/modules/settings/settings/presentations/setting_screen.dart';
+import 'package:bhagavat_geeta/modules/settings/settings/presentations/setting_screen.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget body;
@@ -11,13 +11,17 @@ class AppScaffold extends StatelessWidget {
   final String title;
   final Widget? leading;
   final double? leadingWidth;
+  final bool centerTitle;
+  final String lang;
   const AppScaffold({
     required this.body,
     this.title = "",
+    this.lang = "en",
     this.hasBack = true,
     this.showSettings = true,
     this.leadingWidth,
     this.leading,
+    this.centerTitle = false,
     super.key,
   });
 
@@ -26,16 +30,13 @@ class AppScaffold extends StatelessWidget {
     final theme = context.theme;
 
     return Scaffold(
-      backgroundColor: context.appDesignForAction.isDarkMode
-          ? const Color(0xFF3C404A)
-          : theme.colors.neutral.white,
+      backgroundColor: const Color(0xFFF7F7F7),
       appBar: AppBar(
-        backgroundColor: context.appDesignForAction.isDarkMode
-            ? const Color(0xFF3C404A)
-            : theme.colors.neutral.white,
+        backgroundColor: const Color(0xFFF7F7F7),
         elevation: 0,
-        centerTitle: !hasBack,
+        centerTitle: centerTitle,
         leadingWidth: leadingWidth,
+        titleSpacing: 0,
         leading: hasBack
             ? IconButton(
                 onPressed: () {
@@ -54,11 +55,14 @@ class AppScaffold extends StatelessWidget {
             IconButton(
               onPressed: () {
                 context.navigationCubit.push(AppPage(
-                    page: const MaterialPage(child: SettingScreen()),
+                    page: MaterialPage(
+                        child: SettingScreen(
+                      lang: lang,
+                    )),
                     path: ""));
               },
               icon: Icon(
-                Icons.settings,
+                Icons.settings_outlined,
                 color: context.appDesignForAction.isDarkMode
                     ? Colors.white
                     : Color(0xFF697077),

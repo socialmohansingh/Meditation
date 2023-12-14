@@ -1,13 +1,11 @@
+import 'package:bhagavat_geeta/modules/settings/lang_screen/lang_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_core/flutter_core.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
-import 'package:medication/app/constant/image_constant.dart';
-import 'package:medication/modules/meditation_music/meditation_music_list/presentation/meditation_music_screen.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/play_meditation_music.dart';
+import 'package:bhagavat_geeta/app/constant/image_constant.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  final DefaultTimer selectedTimer;
-  const OnboardingScreen({required this.selectedTimer, super.key});
+  final String lang;
+  const OnboardingScreen({required this.lang, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class OnboardingScreen extends StatelessWidget {
         children: [
           Image.asset(ImageFile.splashScreen),
           Positioned(
-            bottom: 66,
+            bottom: 50,
             left: 0,
             right: 0,
             child: Center(
@@ -38,12 +36,11 @@ class OnboardingScreen extends StatelessWidget {
   }
 
   updateOnboardingScreen(BuildContext context) async {
-    await GetIt.I.get<BaseLocalStorage>().write("isFirstOpen", "0");
     // ignore: use_build_context_synchronously
     context.navigationCubit.root(
       AppPage(
         page: MaterialPage(
-          child: MeditationMusicScreen(selectedTimer: selectedTimer),
+          child: LangScreen(lang: lang),
         ),
         path: "",
       ),

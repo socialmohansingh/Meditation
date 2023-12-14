@@ -1,4 +1,4 @@
-# medication
+# bhagavat_geeta
 
 A new Flutter project.
 

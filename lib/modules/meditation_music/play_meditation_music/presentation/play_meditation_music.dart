@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_extension/flutter_design_extension.dart';
 import 'package:flutter_module_architecture/flutter_module_architecture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medication/app/constant/icon_constant.dart';
-import 'package:medication/app/extension/audio_player.dart';
-import 'package:medication/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
-import 'package:medication/modules/settings/settings/presentations/setting_screen.dart';
+import 'package:bhagavat_geeta/app/constant/icon_constant.dart';
+import 'package:bhagavat_geeta/app/extension/audio_player.dart';
+import 'package:bhagavat_geeta/modules/meditation_music/meditation_music_list/domain/model/meditation_music_model.dart';
+import 'package:bhagavat_geeta/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
+import 'package:bhagavat_geeta/modules/settings/settings/presentations/setting_screen.dart';
 
 class DefaultTimer {
   int id;
@@ -111,7 +111,10 @@ class _PlayMeditationMusicState extends State<PlayMeditationMusic> {
                 IconButton(
                   onPressed: () {
                     context.navigationCubit.push(AppPage(
-                        page: const MaterialPage(child: SettingScreen()),
+                        page: MaterialPage(
+                            child: SettingScreen(
+                          lang: "en",
+                        )),
                         path: ""));
                   },
                   icon: const Icon(
@@ -396,9 +399,15 @@ class _PlayMeditationMusicState extends State<PlayMeditationMusic> {
                         const SizedBox(
                           height: 40,
                         ),
-                        const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 31.5),
-                            child: AudioProgressBar()),
+                        Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 31.5),
+                            child: AudioProgressBar(
+                              runningMusic: MusicModel(
+                                  id: widget.music.id.toString(),
+                                  url: widget.music.audio,
+                                  musicType: "audio"),
+                            )),
                         const SizedBox(
                           height: 5,
                         ),
@@ -612,26 +621,45 @@ class _PlayMeditationMusicState extends State<PlayMeditationMusic> {
 }
 
 class AudioProgressBar extends StatelessWidget {
-  const AudioProgressBar({Key? key}) : super(key: key);
+  MusicModel? runningMusic;
+  // ignore: avoid_init_to_null
+  AudioProgressBar({this.runningMusic, this.onComplete = null, Key? key})
+      : super(key: key);
+  Function(MusicModel? music)? onComplete;
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ProgressBarState>(
       valueListenable: MyPlayer.shared.progressNotifier,
       builder: (_, value, __) {
+        if (onComplete != null) {
+          Duration total = Duration(
+              days: value.total.inDays,
+              hours: value.total.inHours,
+              minutes: value.total.inMinutes,
+              seconds: value.total.inSeconds);
+          Duration current = Duration(
+              days: value.current.inDays,
+              hours: value.current.inHours,
+              minutes: value.current.inMinutes,
+              seconds: value.current.inSeconds);
+          if (total != Duration.zero &&
+              total == current &&
+              runningMusic?.id == MyPlayer.shared.getCurrentMusic()?.id) {
+            onComplete!(MyPlayer.shared.getCurrentMusic());
+          }
+        }
         return ProgressBar(
           progress: value.current,
           buffered: value.buffered,
           total: value.total,
           onSeek: MyPlayer.shared.seek,
           thumbRadius: 5,
-          baseBarColor: Colors.white,
-          progressBarColor: const Color(0xFFDFB160),
-          thumbColor: const Color(0xFFDFB160),
+          baseBarColor: const Color(0xFFFEF7EB),
+          progressBarColor: const Color(0xFFD26A00),
+          thumbColor: const Color(0xFFD26A00),
           timeLabelPadding: 5,
           timeLabelTextStyle: GoogleFonts.urbanist().copyWith(
-            color: !context.appDesignForAction.isDarkMode
-                ? const Color(0xFF697077)
-                : Colors.white,
+            color: const Color(0xFF878D96),
             fontSize: 12,
             fontWeight: FontWeight.w600,
           ),

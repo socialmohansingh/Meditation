@@ -258,7 +258,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "55bbf1a74ea73eddc24fb411ad25c0ef41dbffff"
+      resolved-ref: bb911a7656b2718fcf4fd4d0690127336cfa2e4c
       url: "https://github.com/bemohansingh/Flutter-Module-Architecture"
     source: git
     version: "0.0.1"

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:just_audio/just_audio.dart';
-import 'package:medication/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
+import 'package:bhagavat_geeta/modules/meditation_music/play_meditation_music/presentation/progress_notifier.dart';
 
 enum MusicStatus { playing, stop, pause, none }
 
@@ -37,6 +37,17 @@ class MyPlayer {
 
   Duration currentDuration() {
     return _timerDurarion;
+  }
+
+  clearMusic() {
+    stopAudio();
+    _currentMusic = null;
+    _timer?.cancel();
+    _timerDurarion = const Duration();
+  }
+
+  bool isPLaying() {
+    return _player.playing;
   }
 
   MusicStatus getStatus() {
